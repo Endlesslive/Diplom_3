@@ -41,7 +41,8 @@ class OrderPageLocators:
     CONSTRUCTOR_BUTTON = HeaderLocators.CONSTRUCTOR
     INGREDIENT = (By.XPATH,"//a[starts-with(@href,'/ingredient/')][.//p[normalize-space()='Флюоресцентная булка R2-D3']]")
     CONSTRUCTOR_DROP = MainPageLocators.CONSTRUCTOR_DROP
-
+    MODAL_CLOSE_BTN = (By.CSS_SELECTOR, "button[class*='Modal_modal__close']")
+    MODAL_OVERLAY = (By.CSS_SELECTOR, "div[class*='Modal_modal__overlay'], div[class*='Modal_modal_overlay']")
     CREATE_ORDER_BUTTON = (By.XPATH, "//button[contains(.,'Оформить заказ')]")
     MODAL_CLOSE_BUTTON = ModalLocators.CLOSE_BUTTON
     NUMBER_OF_ORDER = (By.CSS_SELECTOR, "h2[class*='Modal_modal__title']")
@@ -52,3 +53,7 @@ class FeedPageLocators:
     TOTAL_DONE = OrderPageLocators.ORDERS_TOTAL
     TODAY_DONE = OrderPageLocators.ORDERS_TODAY
     IN_PROGRESS_SECTION = OrderPageLocators.IN_PROGRESS_SECTION
+
+class BasePageLocators:
+    OVERLAY = (By.CSS_SELECTOR, "div[class*='Modal_modal__overlay']")
+    MODAL_CLOSE_BTN = (By.CSS_SELECTOR, "button[class*='Modal_modal__close']")

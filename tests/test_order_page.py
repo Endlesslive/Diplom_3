@@ -21,7 +21,7 @@ class TestOrderFeed:
         page.click_on_close_window_button()
 
         page.open_feed_page()
-        WebDriverWait(driver, 60).until(lambda d: int(page.get_total_orders()) > first)
+        page.wait_for_counter_increase(first, 'total', timeout=60)
         second = int(page.get_total_orders())
 
         assert first < second
@@ -40,7 +40,7 @@ class TestOrderFeed:
         page.click_on_close_window_button()
 
         page.open_feed_page()
-        WebDriverWait(driver, 90).until(lambda d: int(page.get_today_orders()) > first)
+        page.wait_for_counter_increase(first, 'today', timeout=90)
         second = int(page.get_today_orders())
 
         assert first < second
